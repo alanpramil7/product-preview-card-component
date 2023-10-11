@@ -1,0 +1,142 @@
+:root{
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    --bg-neutral-900: hsl(212, 21%, 14%);
+    --bg-neutral-700: hsl(228, 12%, 48%);
+    --bg-neutral-100: hsl(0, 0%, 100%);
+
+    --font-fraunces: "Fraunces", serif;
+    --font-montserrat: 'Montserrat', sans-serif;
+
+    --font-regular: 400;
+    --font-bold: 700; 
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }   
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+body{
+  display: grid;
+  height: 100vh;
+  place-content: center;
+  margin: 1rem;
+  font-size: 0.825rem;
+  font-family: var(--font-montserrat);
+  font-weight: var(--font-regular);
+  color: var(--bg-neutral-700);
+  background-color: var(--cream);
+}
+
+.product{
+  background-color: var(--bg-neutral-100);
+  border-radius: .825rem;
+  display: grid;
+  overflow: hidden;
+  max-width: 550px;
+}
+
+.flex-box{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.product_details{
+  display: grid;
+  margin: 1rem;
+  padding-left: 5px;
+  gap: .725rem;
+}
+
+.product_category{
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: .650rem;
+}
+
+.product_name{
+  font-size: 2rem;
+  font-family: var(--font-fraunces);
+  line-height: 2rem;
+  color: var(--bg-neutral-900);
+}
+
+.current_price{
+  font-family: var(--font-fraunces);
+  font-size: 2rem;
+  color: var(--dark-cyan);
+}
+
+.old_price{
+  text-decoration: line-through;
+  font-size: 0.825rem;
+}
+
+.button{
+  justify-content: center;
+  padding: 0.725rem;
+  border: none;
+  border-radius: .5rem;
+  background-color: var(--dark-cyan);
+  color: var(--bg-neutral-100);
+  font-weight: var(--font-bold);
+}
+
+.button:hover{
+  cursor: pointer;
+  background-color: hsl(158, 36%, 24%);
+}
+
+@media (min-width:600px){
+  .product{
+    grid-template-columns: 1fr 1fr;
+  }
+  .product_details{
+    padding: 1rem;
+  }
+}
